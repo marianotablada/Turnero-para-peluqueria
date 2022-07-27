@@ -442,11 +442,11 @@ thead tr:nth-child(3) th {
     margin: 2px;
     cursor: pointer;
     min-width: 100px;
-
+    visibility: hidden;
 }
 
 .cell:hover {
-  border: 1px solid #3D5AFE;
+    border: 1px solid #3D5AFE;
 }
 
 .day {

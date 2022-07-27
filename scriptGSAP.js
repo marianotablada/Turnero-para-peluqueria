@@ -58,6 +58,6 @@ let tween8 = gsap.to(`.bn633-hover`, { //botón Continuar
 let tween9 = gsap.to(`.bn634-hover`, { //botón Aceptar
     duration: 2, 
     autoAlpha: 1,
-    delay: 0.5, 
+    delay: 1, 
     paused: true
 });

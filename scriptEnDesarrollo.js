@@ -66,26 +66,19 @@ let checks = document.querySelectorAll(`.valores`);
 let mybotonContinuar = document.getElementById("mybotonContinuar");
 let menuHorarios = document.getElementsByClassName("cell");
 let inputFecha = document.getElementById("dp1")
+let contenedorDeHorarios = document.querySelector(".main_horarios");
 
-/*
-console.log(menuHorarios[0].innerText);
 
-menuHorarios.addEventListener("click", () => {
-    console.log(menuHorarios.indexOf);
-    let resultadoHorarioSeleccionado = menuHorarios[indexOf];
-    console.log(resultadoHorarioSeleccionado);
-});
 
-menuHorarios.addEventListener("click", () => {
+contenedorDeHorarios.addEventListener("click", function () {
     tween9.play();
+    console.log(document.querySelector(".cell.select").innerText);
 });
-*/
 
 
 let turnoIdRegistrado = Math.random()*400;
 //EVENTOS
 botonAgendarTurno.addEventListener("click", () =>  {
-        // botonAgendarTurno.style.visibility = "hidden";
         tweenButtonAgendar.play();
         tweenButtonConsultaTurno.play();
         seccionPrincipal.style.height = 240 + `px`;
@@ -93,7 +86,6 @@ botonAgendarTurno.addEventListener("click", () =>  {
         tween2.play(); //esto están en el scriptGSAP
         tween3.play(); //esto están en el scriptGSAP
         tween5.play();
-       // botonConsultarTurno.style.visibility = "hidden";
        turnoIdRegistrado = Math.floor(turnoIdRegistrado+1);
        // console.log(turnoIdRegistrado);
        botonConsultarTurno.style.display = "none";
@@ -172,7 +164,6 @@ botonContinuar.addEventListener("click", () => {
     console.log(inputTell.value);
     console.groupEnd();
     // console.log(servicios.indexOf(select.value));
-    // formulario1.style.visibility = "hidden";
     seccionCalendario.style.display = "inline-block";
     // sessionStorage.setItem("nombre ingresado", (inputNombre.value));
     // sessionStorage.setItem("servicio seleccionado", (select.value));
@@ -185,29 +176,7 @@ botonContinuar.addEventListener("click", () => {
         });
     }
     scrollWin();
-    console.log("la fecha está vacia")
-    gsap.from(".cell", {
-        opacity: 0, 
-        y: 100, 
-        duration: 1,
-        delay: 3
-    });
 });
-
-/*
-inputFecha.addEventListener("input", () => {
-    console.log(inputFecha.value);
-});
-
-inputFecha.addEventListener("change", () => {
-    console.log(inputFecha.value);
-});
-
-inputFecha.addEventListener("select", () => {
-    console.log(inputFecha.value);
-});
-*/
-
 
 
 botonContinuar.addEventListener("click",function(){
@@ -237,8 +206,6 @@ mybotonContinuar.addEventListener("click", () => {
 });
 */
 
-
-
 /*ME GUSTARÍA AGREGAR UNA API de meteorología para que el usuario seleccione la fecha y se le pueda informar si ese día va a llover o no
 let clima = {
     "apiKey": "549a00d56fbe44f1a1f153830222107",
@@ -250,32 +217,20 @@ let clima = {
 };
 */
 
-/* PARA CUANDO ESTÉ POR TERMINAR EL PROYECTO Y TENGA QUE ESCONDER EL BOTÓN ACEPTAR usaría el tween9
-inputFecha.addEventListener("change", () => {
-    clima.fetchWeather();
-    // tween9.play();
-});
-*/
-
-/*
-inputFecha.addEventListener("click", () => {
-    console.log(inputFecha.value);
-    
-});
-*/
-
 function handler(e){
     console.log(e.target.value);
-    tween9.play();
+    gsap.to(".cell", {
+        autoAlpha: 1,  
+        duration: 1,
+        delay: 1
+    });
 }
-
 
 botonAceptar.addEventListener("click", () => {
     let horarioSeleccionado = document.querySelector(".cell.select");
     console.log(horarioSeleccionado.innerText);
     horarioSeleccionado.remove();
     console.log(inputFecha.value);
-
     const turno = {
         turnoId: turnoIdRegistrado,
         nombre: inputNombre.value,
@@ -299,23 +254,17 @@ botonAceptar.addEventListener("click", () => {
     mensajeFinal.append(mensajeFinalNombreCliente);
 
     Turnero.push(turno);
-    
     console.log(Turnero);
-    // mybotonContinuar.style.display = "none";
 
     //JSON
     // localStorage.setItem("turnoIdRegistrado", turnoIdRegistrado);
     const enJSON = JSON.stringify(turno);
-
     localStorage.setItem("turno", enJSON);
     // localStorage.setItem("turno", turno);
-    
     const ConsultaDeTurno = JSON.parse(enJSON);
-
+    console.log(ConsultaDeTurno);
     console.log(ConsultaDeTurno.turnoId);
-    
     seccionCalendario.style.display = "none";
-
     swal({
         title: `Muchas gracias ${inputNombre.value}!`,
         text: `Tu turno es el número: ${turnoIdRegistrado}`,
