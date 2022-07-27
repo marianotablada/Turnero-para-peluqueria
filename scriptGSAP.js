@@ -1,15 +1,16 @@
 // trabajar con Tween todas las variables deben contener la propiedad "paused: true", sino cuando se cargue la página se va a ejecutar el comando
-let tween = gsap.to(`.brand`, {
+let tween = gsap.to(".brand", {
     duration: 1,
-    y: -55,
+    marginTop: `2%`,
     delay: 0,
-    fontSize: `100px`,
+    fontSize: `112px`,
     paused: true
 })
 
 let tween2 = gsap.to(`.brand2`, {
     duration: 1,
-    y: -55,
+    y: -15,
+    x: -70,
     delay: 0,
     paused: true
 });
@@ -33,9 +34,9 @@ let tweenButtonAgendar = gsap.to(`#buttonAgendar`, {
 });
 
 let tweenButtonConsultaTurno = gsap.to(`#buttonConsultaTurno`, {
-    duration: 0,
-    delay: 0,  
+    duration: 0,  
     opacity: 0,
+    delay: 0,
     paused: true
 });
 

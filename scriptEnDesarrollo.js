@@ -1,19 +1,21 @@
-$(document).ready( () => {
+setTimeout(() => {
+    console.log(window.matchMedia(`(prefers-color-scheme: dark)`).matches); //función para detectar si las preferencias del usuario es dark, valor booleano
+}, 1);
 
-    $('.datepicker').datepicker({
-        format: 'dd-mm-yyyy',
-        autoclose: true,
-        startDate: '0d'
-    });
-    
-$('.cell').click(function(){
-        $('.cell').removeClass('select');
-        $(this).addClass('select');
-    });    
-});
+function chequearFormularioEnviado (){
+    const formularioEnviado = localStorage.getItem("turno");
+    // swal("Bienvenido/a !");
+    if (formularioEnviado !== null){
+        console.log("Ya se registró un turno desde este dispositivo");
+        // tween6.play();    
+    }else{
+        console.log("Aún NO se registró ningún turno desde este dispositivo");
+        botonConsultarTurno.style.display = "none";
+    }
+}
+chequearFormularioEnviado ();
 
-
-const turnero = []
+const Turnero = []
 const personas = ["Vanesa", "Brian", "Micaela", "Flor"]
 const Tiempos = [30, 20, 40, 45, 90, 60, 40]
 const Horarios = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00"]
@@ -55,13 +57,15 @@ const botonAgendarTurno = document.getElementById("buttonAgendar")
 const botonConsultarTurno = document.getElementById("buttonConsultaTurno")
 let mensajeFinal = document.getElementById("mensajeFinal");
 let inputNombre = document.getElementById("inputNombre");
+let inputTell = document.getElementById("tel");
 // const imagen = document.getElementById("imagen_page_1");
 const formulario1 = document.getElementById("formulario1");
 const seccionPrincipal = document.getElementById("main_firstSeccion");
 const seccionCalendario = document.getElementById("main_therdSection");
 let checks = document.querySelectorAll(`.valores`);
-let myBtn = document.getElementById("myBtn");
+let mybotonContinuar = document.getElementById("mybotonContinuar");
 let menuHorarios = document.getElementsByClassName("cell");
+let inputFecha = document.getElementById("dp1")
 
 /*
 console.log(menuHorarios[0].innerText);
@@ -77,21 +81,9 @@ menuHorarios.addEventListener("click", () => {
 });
 */
 
-function chequearFormularioEnviado (){
-    const formularioEnviado = localStorage.getItem("turnoRegistrado");
-    // swal("Bienvenido/a !");
-    if (formularioEnviado !== null){
-        console.log("SI se registró ningún turno desde este dispositivo");
-        // tween6.play();    
-    }else{
-        console.log("Aún NO se registró ningún turno desde este dispositivo");
-        botonConsultarTurno.style.display = "none";
-    }
-}
-chequearFormularioEnviado ();
 
+let turnoIdRegistrado = Math.random()*400;
 //EVENTOS
-
 botonAgendarTurno.addEventListener("click", () =>  {
         // botonAgendarTurno.style.visibility = "hidden";
         tweenButtonAgendar.play();
@@ -102,12 +94,16 @@ botonAgendarTurno.addEventListener("click", () =>  {
         tween3.play(); //esto están en el scriptGSAP
         tween5.play();
        // botonConsultarTurno.style.visibility = "hidden";
+       turnoIdRegistrado = Math.floor(turnoIdRegistrado+1);
+       // console.log(turnoIdRegistrado);
+       botonConsultarTurno.style.display = "none";
+       botonAgendarTurno.style.display ="none";
 });
 
 botonConsultarTurno.addEventListener("click", () => {
     swal({
-        text: 'Ingrese el número de su turno',
-        content: "input", // cero que aquí debería ir number
+        text: 'Ingrese el nombre de la película', // una vez que tenga desarrollado el server de NODE JS y pueda enviar los datos con un POST, la consulta de la fecha y el día de una turno se realizaría a través de este botón
+        content: "input",
         button: {
           text: "Buscar!",
           closeModal: false,
@@ -127,6 +123,7 @@ botonConsultarTurno.addEventListener("click", () => {
         }
         const name = movie.trackName;
         const imageURL = movie.artworkUrl100;
+
         swal({
           title: "Top result:",
           text: name,
@@ -135,7 +132,7 @@ botonConsultarTurno.addEventListener("click", () => {
       })
       .catch(err => {
         if (err) {
-          swal("Oh noes!", "The AJAX request failed!", "error");
+          swal("No tenemos un turno registrado con ese número, por favor llama al siguiente número: 34513451345 para ayudarte con el problema");
         } else {
           swal.stopLoading();
           swal.close();
@@ -143,35 +140,73 @@ botonConsultarTurno.addEventListener("click", () => {
       });
 });
 
-inputNombre.addEventListener("change", () => {
+inputTell.addEventListener("change", () => {
     tween8.play();
 });
 
-/*Opción 2-
-    botonAgendarTurno.onclikn = () => {
-    alert("Se hizo click sobre el boton Agendar Turno");
-}
-*/
+$(document).ready( () => {
 
-// let horarioSeleccionado = document.querySelector(".cell py-1 select");
-// 
+    $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy',
+        autoclose: true,
+        startDate: '0d'
+    });
+    
+$('.cell').click(function(){
+        $('.cell').removeClass('select');
+        $(this).addClass('select');
+    });    
+});
 
 // captar en un EVENT la opción seleccionada en el select
 // SESION STORAGE
 
 botonContinuar.addEventListener("click", () => {
     // main_secondSection.style.display = "none";
+    console.group("Post 1")
+    console.log(turnoIdRegistrado);
     console.log(inputNombre.value);
     console.log(select.value);
-    console.log(servicios.indexOf(select.value));
     console.log(Tiempos[servicios.indexOf(select.value)]);
     console.log(select2.value);
+    console.log(inputTell.value);
+    console.groupEnd();
+    // console.log(servicios.indexOf(select.value));
     // formulario1.style.visibility = "hidden";
     seccionCalendario.style.display = "inline-block";
-    sessionStorage.setItem("nombre ingresado", (inputNombre.value));
-    sessionStorage.setItem("servicio seleccionado", (select.value));
-    sessionStorage.setItem("profesional seleccionado", (select2.value));
+    // sessionStorage.setItem("nombre ingresado", (inputNombre.value));
+    // sessionStorage.setItem("servicio seleccionado", (select.value));
+    // sessionStorage.setItem("profesional seleccionado", (select2.value));
+    function scrollWin() {
+        window.scrollBy({
+            top: 600,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+    scrollWin();
+    console.log("la fecha está vacia")
+    gsap.from(".cell", {
+        opacity: 0, 
+        y: 100, 
+        duration: 1,
+        delay: 3
+    });
 });
+
+/*
+inputFecha.addEventListener("input", () => {
+    console.log(inputFecha.value);
+});
+
+inputFecha.addEventListener("change", () => {
+    console.log(inputFecha.value);
+});
+
+inputFecha.addEventListener("select", () => {
+    console.log(inputFecha.value);
+});
+*/
 
 
 
@@ -179,14 +214,20 @@ botonContinuar.addEventListener("click",function(){
     checks.forEach((e) => {
         if(e.checked == true){
             console.log(e.value); 
-            swal(`Te vamos a esperar con un rico ${e.value} !`);
+            if(e.value === `cafe`){
+            swal(`Te vamos a esperar con un rico Café!`);
+            }else if(e.value === `mate`){
+                swal(`Te vamos a esperar con un rico Mate!`);
+            }else{
+                console.log("no quiere recibir nada");
+            };
         };
     });
 });
 
 /* Desarrollo de botón para volver atrás al formulario y corregir algún 
 
-myBtn.addEventListener("click", () => {
+mybotonContinuar.addEventListener("click", () => {
     alert("se apretó el boton volver atrás");
     tween9.reverse();
     tween6.reverse();
@@ -196,23 +237,54 @@ myBtn.addEventListener("click", () => {
 });
 */
 
-let inputFecha = document.getElementById("dp1")
+
+
+/*ME GUSTARÍA AGREGAR UNA API de meteorología para que el usuario seleccione la fecha y se le pueda informar si ese día va a llover o no
+let clima = {
+    "apiKey": "549a00d56fbe44f1a1f153830222107",
+    fetchWeather: function () {
+        fetch("http://api.weatherapi.com/v1/future.json?key=&q=London&dt=2022-08-24")
+        .then((response) => response.json())
+        .then((data) => console.log(data));     
+    },
+};
+*/
+
+/* PARA CUANDO ESTÉ POR TERMINAR EL PROYECTO Y TENGA QUE ESCONDER EL BOTÓN ACEPTAR usaría el tween9
+inputFecha.addEventListener("change", () => {
+    clima.fetchWeather();
+    // tween9.play();
+});
+*/
+
+/*
+inputFecha.addEventListener("click", () => {
+    console.log(inputFecha.value);
+    
+});
+*/
+
+function handler(e){
+    console.log(e.target.value);
+    tween9.play();
+}
 
 
 botonAceptar.addEventListener("click", () => {
-
     let horarioSeleccionado = document.querySelector(".cell.select");
-    
     console.log(horarioSeleccionado.innerText);
-
+    horarioSeleccionado.remove();
+    console.log(inputFecha.value);
 
     const turno = {
+        turnoId: turnoIdRegistrado,
         nombre: inputNombre.value,
         motivo: select.value,
         día: inputFecha.value,
         hora: horarioSeleccionado.innerText,
         profesional: select2.value,
         tiempo: Tiempos[servicios.indexOf(select.value)],
+        tel: inputTell.value,
     };
     mensajeFinal.style.display = "inline-block";
     
@@ -226,26 +298,27 @@ botonAceptar.addEventListener("click", () => {
     mensajeFinalNombreCliente.className = "tituloFinal";
     mensajeFinal.append(mensajeFinalNombreCliente);
 
-    turnero.push(turno);
+    Turnero.push(turno);
     
-    console.log(turnero);
-    // myBtn.style.display = "none";
-
-
-localStorage.setItem("turnoRegistrado", parseInt(Math.random()));
+    console.log(Turnero);
+    // mybotonContinuar.style.display = "none";
 
     //JSON
-    /*
+    // localStorage.setItem("turnoIdRegistrado", turnoIdRegistrado);
     const enJSON = JSON.stringify(turno);
+
     localStorage.setItem("turno", enJSON);
-    
     // localStorage.setItem("turno", turno);
-    */
+    
+    const ConsultaDeTurno = JSON.parse(enJSON);
+
+    console.log(ConsultaDeTurno.turnoId);
+    
     seccionCalendario.style.display = "none";
 
     swal({
         title: `Muchas gracias ${inputNombre.value}!`,
-        text: `Se registró tu turno CORRECTAMENTE`,
+        text: `Tu turno es el número: ${turnoIdRegistrado}`,
         icon: "success",
         button: "Finalizar",
     });
@@ -260,7 +333,7 @@ formulario1.addEventListener("submit", (event) => {
 
 botonFinalizar.addEventListener("click", () => {
     for(let i=0; i< personas.length; i++) {
-        const turnosFiltrados = turnero.filter((turno) => {
+        const turnosFiltrados = Turnero.filter((turno) => {
             return turno.profesional.includes(personas[i]);
         });
         const sumall = turnosFiltrados.map(item => item.tiempo).reduce((prev, curr) => prev + curr, 0);
@@ -274,13 +347,13 @@ botonFinalizar.addEventListener("click", () => {
     };
 });
 
-/* + de sesionStorage
-for (let i = 0; i < sessionStorage.length; i++){
-    const clave = sessionStorage.key (i);
-    const valor = sessionStorage.getItem(clave);
+
+/* + de local Storage
+for (let i = 0; i < localStorage.length; i++){
+    const clave = localStorage.key (i);
+    const valor = localStorage.getItem(clave);
     console.log(`Para la clave: ${clave}, el valor es: ${valor} `);
-}
-});
+};
 */
 
 // Local Storage 

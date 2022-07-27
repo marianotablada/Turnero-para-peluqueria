@@ -65,6 +65,9 @@ main{
     margin: 13% 0 0 11%;
     filter: drop-shadow(0 0 20px #121212);
 }
+.card-header{
+    width: 260px;
+}
 
 .brand2 {
     font-family: var(--bs-3-font-family);
@@ -87,26 +90,28 @@ label {
     left: 70%;
     border-radius: 5%;
     z-index: 100;
-/*   filter: drop-shadow(0 0 20px #121212);*/
 }
 
 #formulario1 {
     visibility: hidden;
     position: relative;
-    background-image: linear-gradient(#dacdcd, transparent);
+    background: linear-gradient(195deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     z-index: 60;
-    max-width: 55%;
+    max-width: 40%;
     justify-items: center;
     justify-content: space-around;
     align-content: flex-start;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 2px solid #CCC;
-    border-radius: 1em;
+    /* border: 2px solid #CCC; */
+    border-radius: 32px;
     font-size: 1.3rem;
     height: auto;
     padding: 1em;
-    box-shadow: -9px 10px 4px 0px rgba(45, 54, 65, 0.75); 
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; 
     bottom: 50px;
 }
 
@@ -140,12 +145,14 @@ label {
     height: 40px;
     border-radius: 5px;
     font-family: var(--bs-3-font-family);
-    
+    width: 70%;
+    background-color: black;
+    color: white;
 }
 
 .checkbox {
-    width: 18px;
-    height: 18px;
+    width: 1.6em;
+    height: 1.6em;
 }
 
 .bn24 {
@@ -270,7 +277,9 @@ label {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }    
+    transition: all 0.5s ease-in-out; 
+    visibility: hidden;
+}    
 
 .bn634-hover:hover {
     background-position: 100% 0;
@@ -290,6 +299,10 @@ label {
     border-radius: 5px;
     font-family: var(--bs-3-font-family);
     font-weight: 800;
+}
+
+.valores {
+    accent-color: deeppink;
 }
 
 .main_secondSection {
@@ -317,24 +330,26 @@ label {
     background-image: linear-gradient(#dacdcd, transparent);
     border-radius: 1em;
     width: 55%;
+    margin-top: 50px;
 }
 
 #dp1 {
-    padding: 10px 20px !important;
-    border: 1px solid #000 !important;
+    padding: 10px 20px;
+    border: 1px solid #000;
     border-radius: 10px;
     box-sizing: border-box;
-    background-color: #616161 !important;
-    color: #fff !important;
+    background-color: #616161;
+    color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
     width: 180px;
+    z-index: 1111;
 }
 
 #dp1:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
     border: 1px solid #512DA8;
     outline-width: 0;
 }
@@ -353,9 +368,9 @@ label {
 }
 
 button:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
     outline-width: 0;
 }
 
@@ -368,7 +383,7 @@ button:focus {
 
 .datepicker table {
     background-color: #030303;
-    z-index: 70;
+    z-index: 1110;
 }
 
 .datepicker-dropdown:after {
@@ -376,42 +391,42 @@ button:focus {
 }
 
 thead tr:nth-child(3) th {
-  color: #fff !important;
+  color: #fff;
   font-weight: bold;
   padding-top: 20px;
   padding-bottom: 10px;
 }
 
 .dow, .old-day, .day, .new-day {
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 0px !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
 }
 
 .old-day:hover, .day:hover, .new-day:hover, .month:hover, .year:hover, .decade:hover, .century:hover {
-  border-radius: 6px !important;
+  border-radius: 6px;
   background-color: #eee;
   color: #000;
 }
 
 .active {
-    border-radius: 6px !important;
-    background-image: linear-gradient(#90CAF9, #64B5F6) !important;
-    color: #000 !important;
+    border-radius: 6px;
+    background-image: linear-gradient(#90CAF9, #64B5F6);
+    color: #000;
 }
 
 .disabled {
-    color: #616161 !important;
+    color: #616161;
 }
 
 .prev, 
 .next, 
 .datepicker-switch {
-    border-radius: 0 !important;
-    padding: 20px 10px !important;
+    border-radius: 0;
+    padding: 20px 10px;
     text-transform: uppercase;
     font-size: 20px;
-    color: #fff !important;
+    color: #fff;
     opacity: 0.8;
 }
 
@@ -423,10 +438,11 @@ thead tr:nth-child(3) th {
 }
 
 .cell {
-  border: 1px solid #BDBDBD;
-  margin: 2px;
-  cursor: pointer;
-  min-width: 100px;
+    border: 1px solid #BDBDBD;
+    margin: 2px;
+    cursor: pointer;
+    min-width: 100px;
+
 }
 
 .cell:hover {
@@ -463,103 +479,12 @@ thead tr:nth-child(3) th {
     background-color: #ecf0f1;
     padding: 1rem;
     text-align: center;
+    display: block;
 }
 
 #formulario_calendario {
     width: 70%;
 }
-
-
-/*
-.calendar {
-    width: 45rem;
-    height: 52rem;
-    background-color: #222227;
-    box-shadow: -9px 10px 4px 0px rgba(45, 54, 65, 0.75);
-    }
-
-.month {
-    width: 100%;
-    height: 12rem;
-    background-color: #167e56;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    text-align: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
-    }
-    
-.month .prev, .next {
-    font-size: 3rem;
-    cursor: pointer;
-}
-    
-.month h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-}
-    
-.month p {
-    font-size: 1.6rem;
-}
-    
-.weekdays {
-    width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
-    display: flex;
-}
-    
-    .weekdays div {
-        font-size: 1.5rem;
-        font-weight: 400;
-        letter-spacing: 0.1rem;
-        width: calc(44.2rem / 7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-shadow: 0.3rem 0.5rem rgba(0,0,0,0.5);
-    }
-    
-    .days {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0.2rem;
-    }
-    
-    .days div {
-        font-size: 1.4rem;
-        margin: 0.3rem;
-        width: calc(40.2rem / 7);
-        height: 5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
-    }
-    
-    .days div:hover:not(.today) {
-        color: salmon;
-    }
-    
-    .days div:hover:not(.today) {
-        background-color: #262626;
-        border: 0.2rem solid #777;
-        cursor: pointer;
-    }
-.prev-date,
-.next-date {
-    opacity: 0.5;
-}
-    
-.today {
-    background-color: #167e56;    
-}
-*/
 
 #mensajeFinal {
     width: 100%;
@@ -571,22 +496,26 @@ thead tr:nth-child(3) th {
     z-index: 30;
     display: none;
     color: white;
-    }
+    text-align: center;
+}
 
 @media (max-width: 470px) {
 
     #formulario1 {
     font-size: 2.3rem;
+
     max-width: 80%;
     }
-
+    .nombre{
+        font-size: 1.6rem;
+    }
     .card {
         max-width: 80%;
         margin-left: 50px;
     }
 
     .brand {
-        font-size: 10em;
+        font-size: 11em;
     }
 
     .brand2 {
@@ -604,9 +533,8 @@ thead tr:nth-child(3) th {
     }
 
     .bn633-hover {
-        margin: 0% 9%;
         width: 177px;
-        font-size: 12px;
+        font-size: 16px;
         cursor: pointer;
         height: 35px;
         top: 10px;
