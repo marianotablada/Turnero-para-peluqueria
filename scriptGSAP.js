@@ -49,14 +49,14 @@ let tween5 = gsap.to(`#formulario1`, {
 });
 
 let tween8 = gsap.to(`.bn633-hover`, { //botón Continuar 
-    duration: 3,
+    duration: 1,
     autoAlpha: 1,
     delay: 0.5,
     paused: true
 });
 
 let tween9 = gsap.to(`.bn634-hover`, { //botón Aceptar
-    duration: 2, 
+    duration: 1, 
     autoAlpha: 1,
     delay: 1, 
     paused: true

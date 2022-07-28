@@ -10,6 +10,7 @@ let inputTell = document.getElementById("tel");
 // const imagen = document.getElementById("imagen_page_1");
 const formulario1 = document.getElementById("formulario1");
 const seccionPrincipal = document.getElementById("main_firstSeccion");
+const seccionFormulario = document.querySelector(".main_secondSection");
 const seccionCalendario = document.getElementById("main_therdSection");
 let checks = document.querySelectorAll(`.valores`);
 let mybotonContinuar = document.getElementById("mybotonContinuar");
@@ -152,7 +153,7 @@ $('.cell').click(function(){
 // SESION STORAGE
 
 botonContinuar.addEventListener("click", () => {
-    // main_secondSection.style.display = "none";
+    
     console.group("Post 1")
     console.log(turnoIdRegistrado);
     console.log(inputNombre.value);
@@ -260,6 +261,9 @@ botonAceptar.addEventListener("click", () => {
     mensajeFinalNombreCliente.className = "tituloFinal";
     mensajeFinal.append(mensajeFinalNombreCliente);
 
+    
+
+
     Turnero.push(turno);
     console.log(Turnero);
 
@@ -278,6 +282,7 @@ botonAceptar.addEventListener("click", () => {
         icon: "success",
         button: "Finalizar",
     });
+    seccionFormulario.style.display = "none";
 });
 
 //EVENTOS -Sumit

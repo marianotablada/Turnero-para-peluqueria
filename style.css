@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Noto+Serif+JP:wght@200&family=Tai+Heritage+Pro&display=swap');
 :root {
     --bs-1-font-family: 'Abril Fatface', cursive;
-    --bs-2-font-family: 'Cormorant Garamond', serif;
+    --bs-2-font-family: 'Cormorant SC', serif;
     --bs-3-font-family: 'Noto Serif JP', serif;
     --bs-4-font-family: 'Tai Heritage Pro', serif;
 }
@@ -101,12 +101,6 @@ label {
     border: 1px solid rgba(255, 255, 255, 0.18);
     z-index: 60;
     max-width: 40%;
-    justify-items: center;
-    justify-content: space-around;
-    align-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* border: 2px solid #CCC; */
     border-radius: 32px;
     font-size: 1.3rem;
     height: auto;
@@ -118,6 +112,7 @@ label {
 #formulario1 ul {
     list-style: none;
 }
+
 
 /*
 #myBtn {
@@ -155,141 +150,145 @@ label {
     height: 1.6em;
 }
 
-.bn24 {
-    background-image: linear-gradient(to right, #030303, #485563, #CB5554, #EAE5DB);
-    box-shadow: -9px 10px 4px 0px rgba(45, 54, 65, 0.75); }
-
-.bn25 {
-    background-image: linear-gradient(to right, #030303, #485563, #2e6386, #4e4376);
-    box-shadow: -9px 10px 4px 0px rgba(45, 54, 65, 0.75); }
-
 .bn631-hover {
     position: relative;
-    width: 280px;
-    font-family: var(--bs-3-font-family);
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 3% 40%;
-    height: 55px;
-    z-index: 110;
-    text-align: center;
-    border: none;
-    background-size: 300% 100%;
+    padding: 17px 30px;
     border-radius: 50px;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
-    
-.bn631-hover:hover {
-    background-position: 100% 0;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
-    
-.bn631-hover:focus {
-    outline: none; 
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: all .5s ease;
+    font-weight: 900;
+    margin: 3% 40%;
+    text-align: center;
+    font-family: var(--bs-3-font-family);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
-    
+
+.bn631-hover:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.bn631-hover:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(15px);
+    transition: 100ms;
+}
+
 .bn632-hover {
     position: relative;
-    width: 280px;
-    font-family: var(--bs-3-font-family);
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 3% 40%;
-    height: 55px;
-    z-index: 110;
-    text-align: center;
-    border: none;
-    background-size: 300% 100%;
+    padding: 17px 30px;
     border-radius: 50px;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: all .5s ease;
+    font-weight: 900;
+    margin: 3% 40%;
+    text-align: center;
+    font-family: var(--bs-3-font-family);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
 
 .bn632-hover:hover {
-    background-position: 100% 0;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
+    letter-spacing: 3px;
+    
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
 
-.bn632-hover:focus {
-    outline: none; }
+.bn632-hover:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(15px);
+    transition: 100ms;
+}
 
 .bn633-hover {
     position: relative;
-    width: 280px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 5% auto;
-    height: 55px;
-    z-index: 110;
-    text-align: center;
-    border: none;
-    background-size: 300% 100%;
+    padding: 17px 30px;
     border-radius: 50px;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; 
-    visibility: hidden;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: all .5s ease;
+    font-weight: 900;
+    margin: 3% 30%;
+    text-align: center;
     font-family: var(--bs-3-font-family);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    visibility: hidden;
 }
-    
-.bn633-hover:hover {
-    background-position: 100% 0;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
-    
-.bn633-hover:focus {
-    outline: none; }
 
+.bn633-hover:hover {
+    letter-spacing: 3px;
+    
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.bn633-hover:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(15px);
+    transition: 100ms;
+}
 .bn634-hover {
     position: relative;
-    width: 280px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 3% auto;
-    height: 55px;
-    z-index: 110;
-    text-align: center;
-    border: none;
-    background-size: 300% 100%;
+    padding: 17px 30px;
     border-radius: 50px;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; 
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: all .5s ease;
+    font-weight: 900;
+    margin: 3% 30%;
+    text-align: center;
+    font-family: var(--bs-3-font-family);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     visibility: hidden;
-}    
+}
 
 .bn634-hover:hover {
-    background-position: 100% 0;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out; }
-        
-.bn6324-hover:focus {
-    outline: none; }
+    letter-spacing: 3px;
+    
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.bn634-hover:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(15px);
+    transition: 100ms;
+}
 
 #select, #select2 {
     z-index: 110;
@@ -302,12 +301,12 @@ label {
 }
 
 .valores {
-    accent-color: deeppink;
+    accent-color: #512DA8;
 }
 
 .main_secondSection {
-        width: 100%;
-        height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .main_therdSection {
@@ -487,16 +486,19 @@ thead tr:nth-child(3) th {
 }
 
 #mensajeFinal {
-    width: 80%;
+    width: 40%;
     height: 380px;
     font-family: var(--bs-3-font-family);
     background-color: white;
-    top: 85%;
-    left: 12%;
+    margin: 0% 5% 5% 30%;
     z-index: 30;
     display: none;
     color: black;
     text-align: center;
+    border-radius: 12px;
+    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+    
 }
 
 @media (max-width: 470px) {
@@ -560,6 +562,8 @@ thead tr:nth-child(3) th {
 
     #mensajeFinal {
         height: 200px;
+        width: 80%;
+        margin: 5% 0% 0% 10%;
         }
 
     .card {
