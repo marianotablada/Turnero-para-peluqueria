@@ -58,7 +58,7 @@ main{
     font-size: 180px;
     width: auto;
     color: white;
-    margin: 13% 0 0 11%;
+    margin: 10% 0 0 11%;
     filter: drop-shadow(0 0 20px #121212);
 }
 .card-header{
@@ -300,7 +300,7 @@ label {
     transition: 100ms;
 }
 .bn635-hover {
-    position: relative;
+    position: absolute;
     padding: 17px;
     border-radius: 50px;
     border: 0;
@@ -311,7 +311,8 @@ label {
     font-size: 1.1rem;
     transition: all .5s ease;
     font-weight: 900;
-    margin: 3% 30%;
+    top: 70%;
+    right: 43%;
     text-align: center;
     font-family: var(--bs-3-font-family);
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -545,7 +546,7 @@ thead tr:nth-child(3) th {
     
 }
 
-@media (max-width: 396px) {
+@media (max-width: 385px) {
     body {
         padding: 0%;
     }
@@ -597,7 +598,9 @@ thead tr:nth-child(3) th {
         
     .bn635-hover {
         font-size: 1.7rem;
-        margin: 5%;
+    top: 54%;
+    right: 19%;
+        
     }
 
     .datepicker table {
@@ -627,8 +630,8 @@ thead tr:nth-child(3) th {
 
     .card {
         font-size: 2em;
-        width: 100%;
-        max-width: 80%;
-        margin-left: 50px;
+        width: 95%;
+        
+        margin-left: 10px;
     }
 }

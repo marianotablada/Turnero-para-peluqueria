@@ -3,7 +3,7 @@ let tween = gsap.to(".brand", {
     duration: 1,
     marginTop: `2%`,
     delay: 0,
-    fontSize: `90px`,
+    fontSize: `87px`,
     paused: true
 })
 
