@@ -89,6 +89,7 @@ botonAgendarTurno.addEventListener("click", () =>  {
         // console.log(turnoIdRegistrado);
         botonConsultarTurno.style.display = "none";
         botonAgendarTurno.style.display ="none";
+        seccionFormulario.style.display = "inline-block";
 });
 
 botonConsultarTurno.addEventListener("click", () => {
@@ -258,7 +259,7 @@ botonAceptar.addEventListener("click", () => {
                                             Con: ${select2.value}
                                             El: ${inputFecha.value} 
                                             A las: ${horarioSeleccionado.innerText}`;
-    mensajeFinalNombreCliente.className = "tituloFinal";
+    // mensajeFinalNombreCliente.className = "tituloFinal";
     mensajeFinal.append(mensajeFinalNombreCliente);
     /*
     let ultimoBoton = document.createElement("button");

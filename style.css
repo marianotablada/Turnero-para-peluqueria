@@ -157,182 +157,132 @@ label {
 }
 
 .bn631-hover {
-    position: relative;
-    padding: 17px 30px;
-    border-radius: 50px;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    transition: all .5s ease;
-    font-weight: 900;
-    margin: 3% 35%;
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 5% 35% 0%;
+    border: none;
     text-align: center;
-    font-family: var(--bs-3-font-family);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    min-width: 200px;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
 }
 
-.bn631-hover:hover {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
 }
 
-.bn631-hover:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(15px);
-    transition: 100ms;
+.bn631-hover:hover .button_top {
+    transform: translateY(-0.33em);
+}
+
+.bn631-hover:active .button_top {
+    transform: translateY(0);
 }
 
 .bn632-hover {
-    position: relative;
-    padding: 17px 30px;
-    border-radius: 50px;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
     font-size: 1.1rem;
-    transition: all .5s ease;
-    font-weight: 900;
-    margin: 3% 35%;
+    font-weight: bold;
+    margin: 5% 35% 0%;
+    border: none;
+    letter-spacing: 1.5px;
     text-align: center;
-    font-family: var(--bs-3-font-family);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    min-width: 200px;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+}
+.bn632-hover:hover .button_top {
+    transform: translateY(-0.33em);
 }
 
-.bn632-hover:hover {
-    letter-spacing: 3px;
-    
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
-}
-
-.bn632-hover:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(15px);
-    transition: 100ms;
+.bn632-hover:active .button_top {
+    transform: translateY(0);
 }
 
 .bn633-hover {
-    position: relative;
-    padding: 17px 30px;
-    border-radius: 50px;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
     font-size: 1.1rem;
-    transition: all .5s ease;
-    font-weight: 900;
-    margin: 3% 30%;
+    font-weight: bold;
+    margin: 3% 30% 0%;
+    border: none;
     text-align: center;
-    font-family: var(--bs-3-font-family);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    letter-spacing: 1.5px;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
     visibility: hidden;
-    min-width: 200px;
+}
+.bn633-hover:hover .button_top {
+    transform: translateY(-0.33em);
 }
 
-.bn633-hover:hover {
-    letter-spacing: 3px;
-    
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+.bn633-hover:active .button_top {
+    transform: translateY(0);
 }
 
-.bn633-hover:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(15px);
-    transition: 100ms;
-}
 .bn634-hover {
-    position: relative;
-    padding: 17px 30px;
-    border-radius: 50px;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
     font-size: 1.1rem;
-    transition: all .5s ease;
-    font-weight: 900;
-    margin: 3% 30%;
+    font-weight: bold;
+    margin: 3% 35%;
+    letter-spacing: 1.5px;
+    border: none;
     text-align: center;
-    font-family: var(--bs-3-font-family);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
     visibility: hidden;
-    min-width: 200px;
+}
+.bn634-hover:hover .button_top {
+    transform: translateY(-0.33em);
 }
 
-.bn634-hover:hover {
-    letter-spacing: 3px;
-    
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+.bn634-hover:active .button_top {
+    transform: translateY(0);
 }
 
-.bn634-hover:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(15px);
-    transition: 100ms;
-}
 .bn635-hover {
-    position: absolute;
-    padding: 17px;
-    border-radius: 50px;
-    border: 0;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
     font-size: 1.1rem;
-    transition: all .5s ease;
-    font-weight: 900;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1.5px;
+    text-align: center;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    position: absolute;
     top: 70%;
     right: 43%;
-    text-align: center;
-    font-family: var(--bs-3-font-family);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    min-width: 200px;
 }
 
-.bn635-hover:hover {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+.bn635-hover:hover .button_top {
+    transform: translateY(-0.33em);
 }
 
-.bn635-hover:active {
-    letter-spacing: 3px;
-    background-color: hsl(261deg 80% 48%);
-    color: hsl(0, 0%, 100%);
-    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-    transform: translateY(15px);
-    transition: 100ms;
+.bn635-hover:active .button_top {
+    transform: translateY(0);
 }
 
 #select, #select2 {
@@ -352,6 +302,7 @@ label {
 .main_secondSection {
     width: 100%;
     height: auto;
+    display: none;
 }
 
 .main_therdSection {
@@ -435,22 +386,22 @@ button:focus {
 }
 
 thead tr:nth-child(3) th {
-  color: #fff;
-  font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
+    color: #fff;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    }
 
 .dow, .old-day, .day, .new-day {
-  width: 40px;
-  height: 40px;
-  border-radius: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
 }
 
 .old-day:hover, .day:hover, .new-day:hover, .month:hover, .year:hover, .decade:hover, .century:hover {
-  border-radius: 6px;
-  background-color: #eee;
-  color: #000;
+    border-radius: 6px;
+    background-color: #eee;
+    color: #000;
 }
 
 .active {
@@ -515,7 +466,8 @@ thead tr:nth-child(3) th {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 1em;
-    width: 75%;
+    column-gap: 4px;
+    width: auto;
     margin-top: 20px;
 }
 
@@ -543,17 +495,19 @@ thead tr:nth-child(3) th {
     border-radius: 12px;
     flex-direction: row-reverse;
     flex-direction: column-reverse;
-    
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; 
 }
 
 @media (max-width: 385px) {
+    * {
+        margin: 0;
+    }
     body {
         padding: 0%;
     }
     #formulario1 {
     font-size: 2.3rem;
-
-    max-width: 80%;
+    max-width: 100%;
     }
     .nombre{
         font-size: 1.8rem;
@@ -562,51 +516,39 @@ thead tr:nth-child(3) th {
         width: 100%;
         font-size: 1.8rem;
     }
-
     .brand {
-        font-size: 10em;
+        font-size: 87px;
         margin-left: 1%;
     }
-
     .brand2 {
         top: 8%;
         font-size: 2.5em;
     }
-    .card-header{
-        margin-left: -28px;
+    .button_top {
+        font-size: 1.9rem;
     }
     .bn631-hover {
-        margin: 15% 0% 0% 25%;
-        position: relative;
+        margin: 5% 25% 0%;
     }
     .bn632-hover {
-        margin: 5% 0% 0% 25%;
-    }
-
-    .bn633-hover {
-        width: 177px;
-        font-size: 16px;
-        cursor: pointer;
-        top: 10px;
-        margin: 3% 13%;
-        }
-
-    .bn634-hover {
-        font-size: 1.7rem;
-        margin: 10%;
-    }
+        margin: 5% 25% 0%;
         
+    }
+    .bn633-hover {
+        margin: 3% 15% 0%;
+    }
+    .bn634-hover {
+        margin: 3% 15% 0%;
+    }  
     .bn635-hover {
         font-size: 1.7rem;
     top: 54%;
     right: 19%;
-        
     }
-
+    
     .datepicker table {
         font-size: 2rem;    
     }
-
     .imagen_page_1 {
         display: none;
     }
@@ -614,24 +556,20 @@ thead tr:nth-child(3) th {
     .main_therdSection {
     height: 650px;
     }
-
     html {
-        font-size: 50%
+        font-size: 50%;
     } 
     .main {
         margin-top: 100%;
     }
-
     #mensajeFinal {
         height: 200px;
         width: 80%;
         margin: 0% 0% 0% 15%;
         }
-
     .card {
         font-size: 2em;
-        width: 95%;
-        
+        width: 100%;
         margin-left: 10px;
     }
 }
