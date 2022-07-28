@@ -85,10 +85,10 @@ botonAgendarTurno.addEventListener("click", () =>  {
         tween2.play(); //esto están en el scriptGSAP
         tween3.play(); //esto están en el scriptGSAP
         tween5.play();
-       turnoIdRegistrado = Math.floor(turnoIdRegistrado+1);
-       // console.log(turnoIdRegistrado);
-       botonConsultarTurno.style.display = "none";
-       botonAgendarTurno.style.display ="none";
+        turnoIdRegistrado = Math.floor(turnoIdRegistrado+1);
+        // console.log(turnoIdRegistrado);
+        botonConsultarTurno.style.display = "none";
+        botonAgendarTurno.style.display ="none";
 });
 
 botonConsultarTurno.addEventListener("click", () => {
@@ -260,10 +260,13 @@ botonAceptar.addEventListener("click", () => {
                                             A las: ${horarioSeleccionado.innerText}`;
     mensajeFinalNombreCliente.className = "tituloFinal";
     mensajeFinal.append(mensajeFinalNombreCliente);
-
-    
-
-
+    /*
+    let ultimoBoton = document.createElement("button");
+    ultimoBoton.innerHTML = `<button></button>`;
+    ultimoBoton.innerText = "Finalizar";
+    ultimoBoton.className = "bn635-hover";
+    mensajeFinal.append(ultimoBoton);
+    */
     Turnero.push(turno);
     console.log(Turnero);
 
@@ -292,21 +295,22 @@ formulario1.addEventListener("submit", (event) => {
 });
 
 botonFinalizar.addEventListener("click", () => {
-    for(let i=0; i< personas.length; i++) {
-        const turnosFiltrados = Turnero.filter((turno) => {
-            return turno.profesional.includes(personas[i]);
-        });
-        const sumall = turnosFiltrados.map(item => item.tiempo).reduce((prev, curr) => prev + curr, 0);
-            console.log(sumall);
-        /*
-            if(sumall < 480){
-            console.log(i);
-        }else{
-            select2.remove(i);
-            // console.log(personas[i]);
-        };    */
-        sumall < 480 ? console.log(i) : select2.remove(i); // Operador ternario
-    };
+    location.reload();
+    //for(let i=0; i< personas.length; i++) {
+    //    const turnosFiltrados = Turnero.filter((turno) => {
+    //        return turno.profesional.includes(personas[i]);
+    //    });
+    //    const sumall = turnosFiltrados.map(item => item.tiempo).reduce((prev, curr) => prev + curr, 0);
+    //        console.log(sumall);
+    //    /*
+    //        if(sumall < 480){
+    //        console.log(i);
+    //     }else{
+    //         select2.remove(i);
+    //         // console.log(personas[i]);
+    //     };    */
+    //     sumall < 480 ? console.log(i) : select2.remove(i); // Operador ternario
+    // };
 });
 
 /* + de local Storage

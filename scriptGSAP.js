@@ -3,7 +3,7 @@ let tween = gsap.to(".brand", {
     duration: 1,
     marginTop: `2%`,
     delay: 0,
-    fontSize: `112px`,
+    fontSize: `90px`,
     paused: true
 })
 
@@ -21,7 +21,7 @@ let tween3 = gsap.to(`.imagen_page_1`, {
     //x: 100, 
     y: -50, 
     opacity: 0,
-    fontSize: `100px`,
+    height: 0,
     paused: true
     
 });
