@@ -487,15 +487,15 @@ thead tr:nth-child(3) th {
 }
 
 #mensajeFinal {
-    width: 100%;
+    width: 80%;
     height: 380px;
     font-family: var(--bs-3-font-family);
-    background-color: #167e56;
+    background-color: white;
     top: 85%;
     left: 12%;
     z-index: 30;
     display: none;
-    color: white;
+    color: black;
     text-align: center;
 }
 

@@ -1,3 +1,22 @@
+const botonContinuar = document.getElementById("botonContinuar");
+const botonFinalizar = document.getElementById("botonFinalizar");
+const botonAceptar = document.getElementById("botonAceptar");
+const tituloPrincipal = document.getElementById("brand");
+const botonAgendarTurno = document.getElementById("buttonAgendar")
+const botonConsultarTurno = document.getElementById("buttonConsultaTurno")
+let mensajeFinal = document.getElementById("mensajeFinal");
+let inputNombre = document.getElementById("inputNombre");
+let inputTell = document.getElementById("tel");
+// const imagen = document.getElementById("imagen_page_1");
+const formulario1 = document.getElementById("formulario1");
+const seccionPrincipal = document.getElementById("main_firstSeccion");
+const seccionCalendario = document.getElementById("main_therdSection");
+let checks = document.querySelectorAll(`.valores`);
+let mybotonContinuar = document.getElementById("mybotonContinuar");
+let menuHorarios = document.getElementsByClassName("cell");
+let inputFecha = document.getElementById("dp1")
+let contenedorDeHorarios = document.querySelector(".main_horarios");
+
 setTimeout(() => {
     console.log(window.matchMedia(`(prefers-color-scheme: dark)`).matches); //función para detectar si las preferencias del usuario es dark, valor booleano
 }, 1);
@@ -18,7 +37,7 @@ chequearFormularioEnviado ();
 const Turnero = []
 const personas = ["Vanesa", "Brian", "Micaela", "Flor"]
 const Tiempos = [30, 20, 40, 45, 90, 60, 40]
-const Horarios = ["10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00"]
+const Horarios = ["10:00AM", "10:30AM", "11:00AM", "11:30AM", "12:00PM", "12:30PM", "13:00PM", "13:30PM", "14:00PM", "14:30PM", "15:00PM", "15:30PM", "16:00PM", "16:30PM", "17:00PM", "17:30PM", "18:00PM", "18:30PM", "19:00PM"]
 const servicios = ["Corte", "Peinado", "Corte y peinado", "Tintura", "Tintura y Corte"]
 
 servicios.push ("Maquillaje");
@@ -48,27 +67,6 @@ for(let i=0; i< personas.length; i++) {
     option.value = personas[i]; // qué valor va a tener
     select2.append(option); // dondé lo va a agregar?
 }
-
-const botonContinuar = document.getElementById("botonContinuar");
-const botonFinalizar = document.getElementById("botonFinalizar");
-const botonAceptar = document.getElementById("botonAceptar");
-const tituloPrincipal = document.getElementById("brand");
-const botonAgendarTurno = document.getElementById("buttonAgendar")
-const botonConsultarTurno = document.getElementById("buttonConsultaTurno")
-let mensajeFinal = document.getElementById("mensajeFinal");
-let inputNombre = document.getElementById("inputNombre");
-let inputTell = document.getElementById("tel");
-// const imagen = document.getElementById("imagen_page_1");
-const formulario1 = document.getElementById("formulario1");
-const seccionPrincipal = document.getElementById("main_firstSeccion");
-const seccionCalendario = document.getElementById("main_therdSection");
-let checks = document.querySelectorAll(`.valores`);
-let mybotonContinuar = document.getElementById("mybotonContinuar");
-let menuHorarios = document.getElementsByClassName("cell");
-let inputFecha = document.getElementById("dp1")
-let contenedorDeHorarios = document.querySelector(".main_horarios");
-
-
 
 contenedorDeHorarios.addEventListener("click", function () {
     tween9.play();
@@ -178,7 +176,6 @@ botonContinuar.addEventListener("click", () => {
     scrollWin();
 });
 
-
 botonContinuar.addEventListener("click",function(){
     checks.forEach((e) => {
         if(e.checked == true){
@@ -224,12 +221,22 @@ function handler(e){
         duration: 1,
         delay: 1
     });
+    for (const turn of Turnero) {
+        if(turn.día === e.target.value){
+            console.log(turn.hora);
+            let horarioNoDisponible = document.querySelector(".cell.select");
+           // console.log(horarioNoDisponible.innerText);
+            horarioNoDisponible.remove();
+        }else{
+            console.log("se verificó que no se muestra un horario disponible para un turno que ya existe")
+        }
+        // console.log(producto.id);
+        // console.log(producto.producto);
+    }    
 }
 
 botonAceptar.addEventListener("click", () => {
     let horarioSeleccionado = document.querySelector(".cell.select");
-    console.log(horarioSeleccionado.innerText);
-    horarioSeleccionado.remove();
     console.log(inputFecha.value);
     const turno = {
         turnoId: turnoIdRegistrado,
@@ -279,7 +286,6 @@ formulario1.addEventListener("submit", (event) => {
     event.preventDefault();
 });
 
-
 botonFinalizar.addEventListener("click", () => {
     for(let i=0; i< personas.length; i++) {
         const turnosFiltrados = Turnero.filter((turno) => {
@@ -287,15 +293,16 @@ botonFinalizar.addEventListener("click", () => {
         });
         const sumall = turnosFiltrados.map(item => item.tiempo).reduce((prev, curr) => prev + curr, 0);
             console.log(sumall);
-        if(sumall < 480){
+        /*
+            if(sumall < 480){
             console.log(i);
         }else{
             select2.remove(i);
             // console.log(personas[i]);
-        };
+        };    */
+        sumall < 480 ? console.log(i) : select2.remove(i); // Operador ternario
     };
 });
-
 
 /* + de local Storage
 for (let i = 0; i < localStorage.length; i++){
