@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Noto+Serif+JP:wght@200&family=Tai+Heritage+Pro&display=swap");
+* {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box; }
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 10s ease infinite;
+  animation: gradient 10s ease infinite; }
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+  body main {
+    width: 100%; }
+    body main .button_top {
+      display: block;
+      box-sizing: border-box;
+      border: 2px solid var(--button_outline_color);
+      border-radius: var(--button_radius);
+      padding: 0.75em 1.5em;
+      background: var(--button_color);
+      color: var(--button_outline_color);
+      transform: translateY(-0.2em);
+      transition: transform 0.1s ease;
+      min-width: 220px; }
+    body main button:focus {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline-width: 0; }
+    body main .container-fluid {
+      padding-top: 120px;
+      padding-bottom: 10px; }
+    body main .active {
+      border-radius: 6px;
+      background-image: linear-gradient(#90CAF9, #64B5F6);
+      color: #000; }
+
+:root {
+  --bs-1-font-family: 'Abril Fatface', cursive;
+  --bs-2-font-family: 'Cormorant SC', serif;
+  --bs-3-font-family: 'Noto Serif JP', serif;
+  --bs-4-font-family: 'Tai Heritage Pro', serif; }
+
+.main_firstSeccion {
+  width: 100%;
+  height: auto; }
+  .main_firstSeccion .brand {
+    font-family: var(--bs-1-font-family);
+    position: relative;
+    z-index: 3000;
+    font-size: 180px;
+    width: auto;
+    color: white;
+    margin: 10% 0 0 11%;
+    filter: drop-shadow(0 0 20px #121212); }
+  .main_firstSeccion .brand2 {
+    font-family: var(--bs-3-font-family);
+    position: relative;
+    z-index: 3000;
+    color: white;
+    margin: 0 0 0 26%;
+    filter: drop-shadow(0 0 20px #121212); }
+  .main_firstSeccion .imagen_page_1 {
+    width: 30%;
+    height: 90%;
+    position: absolute;
+    top: -15px;
+    left: 70%;
+    border-radius: 5%;
+    z-index: 100; }
+  .main_firstSeccion .bn631-hover {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-weight: bold;
+    margin: 5% 35% 0%;
+    border: none;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color); }
+  .main_firstSeccion .bn631-hover:hover .button_top {
+    transform: translateY(-0.33em); }
+  .main_firstSeccion .bn631-hover:active .button_top {
+    transform: translateY(0); }
+  .main_firstSeccion .bn632-hover {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 5% 35% 0%;
+    border: none;
+    letter-spacing: 1.5px;
+    text-align: center;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color); }
+  .main_firstSeccion .bn632-hover:hover .button_top {
+    transform: translateY(-0.33em); }
+  .main_firstSeccion .bn632-hover:active .button_top {
+    transform: translateY(0); }
+
+.main_secondSection {
+  width: 100%;
+  height: auto;
+  display: none; }
+  .main_secondSection #formulario1 {
+    visibility: hidden;
+    position: relative;
+    background: linear-gradient(195deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 60;
+    max-width: 40%;
+    border-radius: 32px;
+    font-size: 1.3rem;
+    height: auto;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    bottom: 50px; }
+    .main_secondSection #formulario1 #select, .main_secondSection #formulario1 #select2 {
+      z-index: 110;
+      font-size: 1em;
+      color: black;
+      border: 2px solid #030303;
+      border-radius: 5px;
+      font-family: var(--bs-3-font-family);
+      font-weight: 800; }
+    .main_secondSection #formulario1 .bn633-hover {
+      --button_radius: 0.75em;
+      --button_color: #e8e8e8;
+      --button_outline_color: #000000;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 3% 30% 0%;
+      border: none;
+      text-align: center;
+      letter-spacing: 1.5px;
+      min-width: 220px;
+      border-radius: var(--button_radius);
+      background: var(--button_outline_color);
+      visibility: hidden; }
+    .main_secondSection #formulario1 .bn633-hover:hover .button_top {
+      transform: translateY(-0.33em); }
+    .main_secondSection #formulario1 .bn633-hover:active .button_top {
+      transform: translateY(0); }
+    .main_secondSection #formulario1 ul {
+      list-style: none; }
+      .main_secondSection #formulario1 ul li :-ms-input-placeholder {
+        color: #fff; }
+      .main_secondSection #formulario1 ul li ::-ms-input-placeholder {
+        color: #fff; }
+      .main_secondSection #formulario1 ul li .nombre {
+        border: 2px solid #030303;
+        height: 40px;
+        border-radius: 5px;
+        font-family: var(--bs-3-font-family);
+        width: 70%;
+        background-color: black;
+        color: white; }
+      .main_secondSection #formulario1 ul li #tel {
+        border: 2px solid #030303;
+        height: 40px;
+        border-radius: 5px;
+        font-family: var(--bs-3-font-family);
+        width: 70%;
+        background-color: black;
+        color: white; }
+      .main_secondSection #formulario1 ul label {
+        font-family: var(--bs-3-font-family); }
+        .main_secondSection #formulario1 ul label .checkbox {
+          width: 1.6em;
+          height: 1.6em; }
+        .main_secondSection #formulario1 ul label .valores {
+          accent-color: #512DA8; }
+
+.main_therdSection {
+  width: 100%;
+  height: 850px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
+  .main_therdSection .card {
+    box-shadow: -9px 10px 4px 0px rgba(45, 54, 65, 0.75);
+    font-family: var(--bs-3-font-family);
+    background-image: linear-gradient(#dacdcd, transparent);
+    border-radius: 1em;
+    width: 55%;
+    margin-top: 50px; }
+    .main_therdSection .card .bn634-hover {
+      --button_radius: 0.75em;
+      --button_color: #e8e8e8;
+      --button_outline_color: #000000;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 3% 35%;
+      letter-spacing: 1.5px;
+      border: none;
+      text-align: center;
+      width: 220px;
+      border-radius: var(--button_radius);
+      background: var(--button_outline_color);
+      visibility: hidden; }
+      .main_therdSection .card .bn634-hover:hover .button_top {
+        transform: translateY(-0.33em); }
+      .main_therdSection .card .bn634-hover:active .button_top {
+        transform: translateY(0); }
+      .main_therdSection .card .bn634-hover .button_top {
+        display: block;
+        box-sizing: border-box;
+        border: 2px solid var(--button_outline_color);
+        border-radius: var(--button_radius);
+        padding: 0.75em 1.5em;
+        background: var(--button_color);
+        color: var(--button_outline_color);
+        transform: translateY(-0.2em);
+        transition: transform 0.1s ease;
+        min-width: 220px; }
+    .main_therdSection .card .main_horarios {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      row-gap: 1em;
+      column-gap: 4px;
+      width: auto;
+      margin-top: 20px; }
+      .main_therdSection .card .main_horarios .cell {
+        background-color: #ecf0f1;
+        padding: 1rem;
+        text-align: center;
+        display: block;
+        border: 1px solid #BDBDBD;
+        margin: 2px;
+        cursor: pointer;
+        min-width: 100px;
+        visibility: hidden; }
+      .main_therdSection .card .main_horarios .select {
+        color: red;
+        border: 1px solid orange; }
+        .main_therdSection .card .main_horarios .select:hover {
+          border: 1px solid #3D5AFE; }
+    .main_therdSection .card #formulario_calendario {
+      width: 70%; }
+      .main_therdSection .card #formulario_calendario .disabled {
+        color: #616161; }
+      .main_therdSection .card #formulario_calendario .prev,
+      .main_therdSection .card #formulario_calendario .next,
+      .main_therdSection .card #formulario_calendario .datepicker-switch {
+        border-radius: 0;
+        padding: 20px 10px;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #fff;
+        opacity: 0.8; }
+        .main_therdSection .card #formulario_calendario .prev:hover,
+        .main_therdSection .card #formulario_calendario .next:hover,
+        .main_therdSection .card #formulario_calendario .datepicker-switch:hover {
+          background-color: orange;
+          opacity: 1; }
+      .main_therdSection .card #formulario_calendario .day {
+        color: white; }
+      .main_therdSection .card #formulario_calendario .fa-calendar {
+        color: #fff;
+        font-size: 30px;
+        padding-top: 8px;
+        padding-left: 5px; }
+      .main_therdSection .card #formulario_calendario .card-header {
+        width: 260px; }
+        .main_therdSection .card #formulario_calendario .card-header #dp1 {
+          padding: 10px 20px;
+          border: 1px solid #000;
+          border-radius: 10px;
+          box-sizing: border-box;
+          background-color: #616161;
+          color: #fff;
+          font-size: 16px;
+          letter-spacing: 1px;
+          width: 180px;
+          z-index: 59; }
+          .main_therdSection .card #formulario_calendario .card-header #dp1:focus {
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid white;
+            outline-width: 0; }
+          .main_therdSection .card #formulario_calendario .card-header #dp1 .datepicker {
+            background-color: #000;
+            color: black;
+            border: none;
+            padding: 10px; }
+          .main_therdSection .card #formulario_calendario .card-header #dp1 thead tr:nth-child(3) th {
+            color: #fff;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 10px; }
+        .main_therdSection .card #formulario_calendario .card-header .dow, .main_therdSection .card #formulario_calendario .card-header .old-day, .main_therdSection .card #formulario_calendario .card-header .day, .main_therdSection .card #formulario_calendario .card-header .new-day {
+          width: 40px;
+          height: 40px;
+          border-radius: 0px; }
+          .main_therdSection .card #formulario_calendario .card-header .dow:hover, .main_therdSection .card #formulario_calendario .card-header .old-day:hover, .main_therdSection .card #formulario_calendario .card-header .day:hover, .main_therdSection .card #formulario_calendario .card-header .new-day:hover {
+            border-radius: 6px;
+            background-color: #1272b2;
+            color: white; }
+        .main_therdSection .card #formulario_calendario .card-header ::placeholder {
+          color: #fff;
+          opacity: 1; }
+    .main_therdSection .card .button_top {
+      display: block;
+      box-sizing: border-box;
+      border: 2px solid var(--button_outline_color);
+      border-radius: var(--button_radius);
+      padding: 0.75em 1.5em;
+      background: var(--button_color);
+      color: var(--button_outline_color);
+      transform: translateY(-0.2em);
+      transition: transform 0.1s ease;
+      min-width: 220px; }
+
+#mensajeFinal {
+  min-width: 50%;
+  font-family: var(--bs-3-font-family);
+  background-color: white;
+  margin: 0% 5% 5% 25%;
+  z-index: 30;
+  padding: 10px;
+  display: none;
+  color: black;
+  text-align: center;
+  border-radius: 12px;
+  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; }
+  #mensajeFinal .bn635-hover {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1.5px;
+    text-align: center;
+    min-width: 220px;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    position: absolute;
+    top: 70%;
+    right: 43%; }
+  #mensajeFinal .bn635-hover:hover .button_top {
+    transform: translateY(-0.33em); }
+  #mensajeFinal .bn635-hover:active .button_top {
+    transform: translateY(0); }
+
+@media (max-width: 472px) {
+  body {
+    padding: 0%; }
+  .main_secondSection #formulario1 {
+    font-size: 2.3rem;
+    max-width: 100%; }
+  .nombre {
+    font-size: 1.8rem; }
+  #tel {
+    width: 100%;
+    font-size: 1.8rem; }
+  .main_firstSeccion .brand {
+    font-size: 87px;
+    margin-left: 1%; }
+  .main_firstSeccion .brand2 {
+    top: 8%;
+    font-size: 2.5em; }
+  .button_top {
+    font-size: 1.9rem; }
+  .bn631-hover {
+    margin: 5% 25% 0%; }
+  .bn632-hover {
+    margin: 5% 25% 0%; }
+  .bn633-hover {
+    margin: 3% 15% 0%; }
+  .main_therdSection .card .bn634-hover {
+    margin: 3% 15% 0%; }
+  #mensajeFinal .bn635-hover {
+    font-size: 1.7rem;
+    top: 55%;
+    right: 22%; }
+  .datepicker table {
+    font-size: 2rem; }
+  .imagen_page_1 {
+    display: none; }
+  .main_therdSection {
+    height: 650px; }
+  html {
+    font-size: 50%; }
+  .main {
+    margin-top: 100%; }
+  #mensajeFinal {
+    height: 200px;
+    width: 80%;
+    margin: 0% 0% 0% 15%; }
+  .main_therdSection .card {
+    font-size: 2em;
+    width: 100%;
+    margin-left: 5px; } }
+
+@media (max-width: 385px) {
+  * {
+    margin: 0; }
+  body {
+    padding: 0%; }
+  .main_secondSection #formulario1 {
+    font-size: 2.3rem;
+    max-width: 100%; }
+  .nombre {
+    font-size: 1.8rem; }
+  #tel {
+    width: 100%;
+    font-size: 1.8rem; }
+  .main_firstSeccion .brand {
+    font-size: 87px;
+    margin-left: 1%; }
+  .main_firstSeccion .brand2 {
+    top: 8%;
+    font-size: 2.5em; }
+  .button_top {
+    font-size: 1.9rem; }
+  .bn631-hover {
+    margin: 5% 25% 0%; }
+  .bn632-hover {
+    margin: 5% 25% 0%; }
+  .bn633-hover {
+    margin: 3% 15% 0%; }
+  .main_therdSection .card .bn634-hover {
+    margin: 3% 15% 0%; }
+  #mensajeFinal .bn635-hover {
+    font-size: 1.7rem;
+    top: 60%;
+    right: 17%; }
+  .datepicker table {
+    font-size: 2rem; }
+  .imagen_page_1 {
+    display: none; }
+  .main_therdSection {
+    height: 650px; }
+  html {
+    font-size: 50%; }
+  .main {
+    margin-top: 100%; }
+  #mensajeFinal {
+    height: 200px;
+    width: 80%;
+    margin: 0% 0% 0% 15%; }
+  .main_therdSection .card {
+    font-size: 2em;
+    width: 100%;
+    margin-left: 5px; } }

@@ -7,7 +7,6 @@ const botonConsultarTurno = document.getElementById("buttonConsultaTurno")
 let mensajeFinal = document.getElementById("mensajeFinal");
 let inputNombre = document.getElementById("inputNombre");
 let inputTell = document.getElementById("tel");
-// const imagen = document.getElementById("imagen_page_1");
 const formulario1 = document.getElementById("formulario1");
 const seccionPrincipal = document.getElementById("main_firstSeccion");
 const seccionFormulario = document.querySelector(".main_secondSection");
@@ -18,22 +17,42 @@ let menuHorarios = document.getElementsByClassName("cell");
 let inputFecha = document.getElementById("dp1")
 let contenedorDeHorarios = document.querySelector(".main_horarios");
 
+// Funciones asyn
+
 setTimeout(() => {
     console.log(window.matchMedia(`(prefers-color-scheme: dark)`).matches); //función para detectar si las preferencias del usuario es dark, valor booleano
 }, 1);
 
+setTimeout(() => {
+    $(document).ready( () => {
+        $('.datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true,
+            startDate: '0d',
+            zIndexOffset: 60,
+            todayHighlight: true,
+            todayBtn: true
+        });
+    $('.cell').click(function(){
+            $('.cell').removeClass('select');
+            $(this).addClass('select');
+        });    
+    });
+    console.log("se activó la función para el calendario");
+}, 2);
+
 function chequearFormularioEnviado (){
     const formularioEnviado = localStorage.getItem("turno");
-    // swal("Bienvenido/a !");
     if (formularioEnviado !== null){
-        console.log("Ya se registró un turno desde este dispositivo");
-        // tween6.play();    
+        console.log("Ya se registró un turno desde este dispositivo");    
     }else{
         console.log("Aún NO se registró ningún turno desde este dispositivo");
         botonConsultarTurno.style.display = "none";
     }
 }
 chequearFormularioEnviado ();
+
+//ARRAYS
 
 const Turnero = []
 const personas = ["Vanesa", "Brian", "Micaela", "Flor"]
@@ -54,14 +73,8 @@ for(let i=0; i< servicios.length; i++) {
     select.append(option);
 }
 
-/* captar en un EVENT cada cambio en select
-select.addEventListener("change", () => {
-    console.log(select.value);
-});
-*/
-
+// Construcción del DOM de manera dinámica
 const select2 = document.getElementById("select2");
-
 for(let i=0; i< personas.length; i++) {
     const option = document.createElement("option"); // qué tipo de TAG quiero agregar
     option.innerText = personas[i]; // qué datos voy a agregar
@@ -74,87 +87,86 @@ contenedorDeHorarios.addEventListener("click", function () {
     console.log(document.querySelector(".cell.select").innerText);
 });
 
-
 let turnoIdRegistrado = Math.random()*400;
+
 //EVENTOS
 botonAgendarTurno.addEventListener("click", () =>  {
         tweenButtonAgendar.play();
         tweenButtonConsultaTurno.play();
         seccionPrincipal.style.height = 240 + `px`;
-        tween.play(); //esto están en el scriptGSAP
+        tween.play();  //esto están en el scriptGSAP
         tween2.play(); //esto están en el scriptGSAP
         tween3.play(); //esto están en el scriptGSAP
-        tween5.play();
+        tween5.play(); //esto están en el scriptGSAP
         turnoIdRegistrado = Math.floor(turnoIdRegistrado+1);
-        // console.log(turnoIdRegistrado);
         botonConsultarTurno.style.display = "none";
         botonAgendarTurno.style.display ="none";
         seccionFormulario.style.display = "inline-block";
+        /* ESTA FUNCIÓN LA UTILIZABA PARA RECORRER EL ARRAY DONDE ALMACENO LOS TURNOS, aplica un filtro por empleado Y CUANDO EL TIEMPO POR SERVICIOS (CORTE, TINTURA, ETC.) LLEGA A SUMAR 480 QUE SON LOS MINUTOS DE TRABAJO EN UN DÍA NORMAL, EN EL SELECT DE LOS "EMPLEADOS" SE ELIMINA ESE EMPLEADO. Pero todo esto no lo puedo utilizar ahora porque cuando se hace click en el botón finalizar, se carga de nuevo la pagina y comienza desde 0 todo sin almacenar datos en el array de turnos
+        setTimeout(() => {
+        for(let i=0; i< personas.length; i++) {
+        const turnosFiltrados = Turnero.filter((turno) => {
+            return turno.profesional.includes(personas[i]);
+        });
+        const sumall = turnosFiltrados.map(item => item.tiempo).reduce((prev, curr) => prev + curr, 0);
+            console.log(sumall);
+            if(sumall < 480){
+            console.log(i);
+        }else{
+            select2.remove(i);
+            }; 
+         sumall < 480 ? console.log(i) : select2.remove(i); // Operador ternario
+        };
+    }, 1);
+    */
 });
 
 botonConsultarTurno.addEventListener("click", () => {
+    // una vez que tenga desarrollado el server de NODE JS y pueda enviar los datos con un POST, la consulta de un turno se realizaría de esta menera
     swal({
-        text: 'Ingrese el nombre de la película', // una vez que tenga desarrollado el server de NODE JS y pueda enviar los datos con un POST, la consulta de la fecha y el día de una turno se realizaría a través de este botón
+        text: 'Ingrese el nombre de la película', 
         content: "input",
         button: {
-          text: "Buscar!",
-          closeModal: false,
-        },
-      })
-      .then(name => {
+            text: "Buscar!",
+            closeModal: false,
+            },
+        })
+        .then(name => {
         if (!name) throw null;
         return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
-      })
-      .then(results => {
+        })
+        .then(results => {
         return results.json();
-      })
-      .then(json => {
+        })
+        .then(json => {
         const movie = json.results[0];
         if (!movie) {
-          return swal("No tenemos un turno registrado con ese número, por favor, comunicate con nuestro atención al cliente para ayudarte");
+            return swal("No tenemos un turno registrado con ese número, por favor, comunicate con nuestro atención al cliente para ayudarte");
         }
         const name = movie.trackName;
         const imageURL = movie.artworkUrl100;
 
         swal({
-          title: "Top result:",
-          text: name,
-          icon: imageURL,
-        });
-      })
-      .catch(err => {
+            title: "Top result:",
+            text: name,
+            icon: imageURL,
+            });
+        })
+        .catch(err => {
         if (err) {
-          swal("No tenemos un turno registrado con ese número, por favor llama al siguiente número: 34513451345 para ayudarte con el problema");
+            swal("No tenemos un turno registrado con ese número, por favor llama al siguiente número: 34513451345 para ayudarte con el problema");
         } else {
-          swal.stopLoading();
-          swal.close();
+            swal.stopLoading();
+            swal.close();
         }
-      });
+        });
 });
 
 inputTell.addEventListener("change", () => {
     tween8.play();
 });
 
-$(document).ready( () => {
-
-    $('.datepicker').datepicker({
-        format: 'dd-mm-yyyy',
-        autoclose: true,
-        startDate: '0d'
-    });
-    
-$('.cell').click(function(){
-        $('.cell').removeClass('select');
-        $(this).addClass('select');
-    });    
-});
-
-// captar en un EVENT la opción seleccionada en el select
-// SESION STORAGE
-
 botonContinuar.addEventListener("click", () => {
-    
     console.group("Post 1")
     console.log(turnoIdRegistrado);
     console.log(inputNombre.value);
@@ -163,11 +175,7 @@ botonContinuar.addEventListener("click", () => {
     console.log(select2.value);
     console.log(inputTell.value);
     console.groupEnd();
-    // console.log(servicios.indexOf(select.value));
     seccionCalendario.style.display = "inline-block";
-    // sessionStorage.setItem("nombre ingresado", (inputNombre.value));
-    // sessionStorage.setItem("servicio seleccionado", (select.value));
-    // sessionStorage.setItem("profesional seleccionado", (select2.value));
     function scrollWin() {
         window.scrollBy({
             top: 600,
@@ -193,29 +201,6 @@ botonContinuar.addEventListener("click",function(){
     });
 });
 
-/* Desarrollo de botón para volver atrás al formulario y corregir algún 
-
-mybotonContinuar.addEventListener("click", () => {
-    alert("se apretó el boton volver atrás");
-    tween9.reverse();
-    tween6.reverse();
-    tween8.reverse();
-    tweenButtonAgendar.reverse();
-    tweenButtonConsultaTurno.reverse();
-});
-*/
-
-/*ME GUSTARÍA AGREGAR UNA API de meteorología para que el usuario seleccione la fecha y se le pueda informar si ese día va a llover o no
-let clima = {
-    "apiKey": "549a00d56fbe44f1a1f153830222107",
-    fetchWeather: function () {
-        fetch("http://api.weatherapi.com/v1/future.json?key=&q=London&dt=2022-08-24")
-        .then((response) => response.json())
-        .then((data) => console.log(data));     
-    },
-};
-*/
-
 function handler(e){
     console.log(e.target.value);
     gsap.to(".cell", {
@@ -223,18 +208,6 @@ function handler(e){
         duration: 1,
         delay: 1
     });
-    for (const turn of Turnero) {
-        if(turn.día === e.target.value){
-            console.log(turn.hora);
-            let horarioNoDisponible = document.querySelector(".cell.select");
-           // console.log(horarioNoDisponible.innerText);
-            horarioNoDisponible.remove();
-        }else{
-            console.log("se verificó que no se muestra un horario disponible para un turno que ya existe")
-        }
-        // console.log(producto.id);
-        // console.log(producto.producto);
-    }    
 }
 
 botonAceptar.addEventListener("click", () => {
@@ -251,7 +224,6 @@ botonAceptar.addEventListener("click", () => {
         tel: inputTell.value,
     };
     mensajeFinal.style.display = "inline-block";
-    
     let mensajeFinalNombreCliente = document.createElement("h2");
     mensajeFinalNombreCliente.innerHTML = `<h2></h2>`;
     mensajeFinalNombreCliente.innerText =   `Muchas gracias ${inputNombre.value}!
@@ -259,23 +231,12 @@ botonAceptar.addEventListener("click", () => {
                                             Con: ${select2.value}
                                             El: ${inputFecha.value} 
                                             A las: ${horarioSeleccionado.innerText}`;
-    // mensajeFinalNombreCliente.className = "tituloFinal";
     mensajeFinal.append(mensajeFinalNombreCliente);
-    /*
-    let ultimoBoton = document.createElement("button");
-    ultimoBoton.innerHTML = `<button></button>`;
-    ultimoBoton.innerText = "Finalizar";
-    ultimoBoton.className = "bn635-hover";
-    mensajeFinal.append(ultimoBoton);
-    */
     Turnero.push(turno);
     console.log(Turnero);
-
-    //JSON
-    // localStorage.setItem("turnoIdRegistrado", turnoIdRegistrado);
+//JSON
     const enJSON = JSON.stringify(turno);
     localStorage.setItem("turno", enJSON);
-    // localStorage.setItem("turno", turno);
     const ConsultaDeTurno = JSON.parse(enJSON);
     console.log(ConsultaDeTurno);
     console.log(ConsultaDeTurno.turnoId);
@@ -289,7 +250,7 @@ botonAceptar.addEventListener("click", () => {
     seccionFormulario.style.display = "none";
 });
 
-//EVENTOS -Sumit
+//EVENTO - Sumit
 
 formulario1.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -297,21 +258,6 @@ formulario1.addEventListener("submit", (event) => {
 
 botonFinalizar.addEventListener("click", () => {
     location.reload();
-    //for(let i=0; i< personas.length; i++) {
-    //    const turnosFiltrados = Turnero.filter((turno) => {
-    //        return turno.profesional.includes(personas[i]);
-    //    });
-    //    const sumall = turnosFiltrados.map(item => item.tiempo).reduce((prev, curr) => prev + curr, 0);
-    //        console.log(sumall);
-    //    /*
-    //        if(sumall < 480){
-    //        console.log(i);
-    //     }else{
-    //         select2.remove(i);
-    //         // console.log(personas[i]);
-    //     };    */
-    //     sumall < 480 ? console.log(i) : select2.remove(i); // Operador ternario
-    // };
 });
 
 /* + de local Storage

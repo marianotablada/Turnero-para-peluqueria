@@ -1,0 +1,38 @@
+#mensajeFinal {
+    min-width: 50%;
+    font-family: var(--bs-3-font-family);
+    background-color: white;
+    margin: 0% 5% 5% 25%;
+    z-index: 30;
+    padding: 10px;
+    display: none;
+    color: black;
+    text-align: center;
+    border-radius: 12px;
+    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; 
+    .bn635-hover {
+        --button_radius: 0.75em;
+        --button_color: #e8e8e8;
+        --button_outline_color: #000000;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        letter-spacing: 1.5px;
+        text-align: center;
+        min-width: 220px;
+        border-radius: var(--button_radius);
+        background: var(--button_outline_color);
+        position: absolute;
+        top: 70%;
+        right: 43%;
+    }
+    .bn635-hover:hover .button_top {
+        transform: translateY(-0.33em);
+    }
+    
+    .bn635-hover:active .button_top {
+        transform: translateY(0);
+    }
+}

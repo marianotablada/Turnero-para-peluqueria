@@ -1,0 +1,33 @@
+{
+  "name": "proyectofinaljavascript",
+  "version": "1.0.0",
+  "description": "mi primer proyecto con javasacript",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/stilosSass.scss css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marianotablada/Turnero-para-peluqueria.git"
+  },
+  "keywords": [
+    "turnero",
+    "peluqueria",
+    "2",
+    "empleados",
+    "o",
+    "más"
+  ],
+  "author": "Tablada Mariano Eric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marianotablada/Turnero-para-peluqueria/issues"
+  },
+  "homepage": "https://github.com/marianotablada/Turnero-para-peluqueria#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}

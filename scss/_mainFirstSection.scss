@@ -1,0 +1,73 @@
+.main_firstSeccion {
+    width: 100%;
+    height: auto;
+    .brand {
+        font-family: var(--bs-1-font-family);
+        position: relative;
+        z-index: 3000;
+        font-size: 180px;
+        width: auto;
+        color: white;
+        margin: 10% 0 0 11%;
+        filter: drop-shadow(0 0 20px #121212);
+    }
+    .brand2 {
+        font-family: var(--bs-3-font-family);
+        position: relative;
+        z-index: 3000;
+        color: white;
+        margin: 0 0 0 26%;
+        filter: drop-shadow(0 0 20px #121212);
+    }
+    .imagen_page_1 {
+        width: 30%;
+        height: 90%;
+        position: absolute;
+        top: -15px;
+        left: 70%;
+        border-radius: 5%;
+        z-index: 100;
+    }
+    .bn631-hover {
+        --button_radius: 0.75em;
+        --button_color: #e8e8e8;
+        --button_outline_color: #000000;
+        font-weight: bold;
+        margin: 5% 35% 0%;
+        border: none;
+        text-align: center;
+        font-size: 1.1rem;
+        letter-spacing: 1.5px;
+        min-width: 220px;
+        border-radius: var(--button_radius);
+        background: var(--button_outline_color);
+    }
+    .bn631-hover:hover .button_top {
+        transform: translateY(-0.33em);
+    }
+    
+    .bn631-hover:active .button_top {
+        transform: translateY(0);
+    }
+    .bn632-hover {
+        --button_radius: 0.75em;
+        --button_color: #e8e8e8;
+        --button_outline_color: #000000;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 5% 35% 0%;
+        border: none;
+        letter-spacing: 1.5px;
+        text-align: center;
+        min-width: 220px;
+        border-radius: var(--button_radius);
+        background: var(--button_outline_color);
+    }
+    .bn632-hover:hover .button_top {
+        transform: translateY(-0.33em);
+    }
+    
+    .bn632-hover:active .button_top {
+        transform: translateY(0);
+    }
+}

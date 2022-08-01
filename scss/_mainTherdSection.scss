@@ -1,0 +1,166 @@
+.main_therdSection {
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    .card {
+        box-shadow: -9px 10px 4px 0px rgba(45, 54, 65, 0.75);
+        font-family: var(--bs-3-font-family);
+        background-image: linear-gradient(#dacdcd, transparent);
+        border-radius: 1em;
+        width: 55%;
+        margin-top: 50px;
+        .bn634-hover {
+            --button_radius: 0.75em;
+            --button_color: #e8e8e8;
+            --button_outline_color: #000000;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 3% 35%;
+            letter-spacing: 1.5px;
+            border: none;
+            text-align: center;
+            width: 220px;
+            border-radius: var(--button_radius);
+            background: var(--button_outline_color);
+            visibility: hidden;
+        &:hover .button_top {
+            transform: translateY(-0.33em);
+            }
+        &:active .button_top {
+                transform: translateY(0);
+            }
+            .button_top {
+            display: block;
+            box-sizing: border-box;
+            border: 2px solid var(--button_outline_color);
+            border-radius: var(--button_radius);
+            padding: 0.75em 1.5em;
+            background: var(--button_color);
+            color: var(--button_outline_color);
+            transform: translateY(-0.2em);
+            transition: transform 0.1s ease;
+            min-width: 220px;
+        }
+        }
+        .main_horarios {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            row-gap: 1em;
+            column-gap: 4px;
+            width: auto;
+            margin-top: 20px;
+            .cell {
+                background-color: #ecf0f1;
+                padding: 1rem;
+                text-align: center;
+                display: block;
+                border: 1px solid #BDBDBD;
+                margin: 2px;
+                cursor: pointer;
+                min-width: 100px;
+                visibility: hidden;
+            }
+            .select {
+                color: red;
+                border: 1px solid orange;
+                &:hover {
+                    border: 1px solid #3D5AFE;
+                }
+            }
+        }
+        #formulario_calendario {
+            width: 70%;
+            .disabled {
+                color: #616161;
+            }
+            .prev,
+            .next, 
+            .datepicker-switch {
+                border-radius: 0;
+                padding: 20px 10px;
+                text-transform: uppercase;
+                font-size: 20px;
+                color: #fff;
+                opacity: 0.8;
+                &:hover{
+                    background-color: orange;
+                    opacity: 1;
+                }
+            }
+            .day {
+                color: white;
+            }
+            .fa-calendar {
+                color: #fff;
+                font-size: 30px;
+                padding-top: 8px;
+                padding-left: 5px;
+            }
+            .card-header{
+                width: 260px;
+                #dp1 {
+                    padding: 10px 20px;
+                    border: 1px solid #000;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    background-color: #616161;
+                    color: #fff;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    width: 180px;
+                    z-index: 59;
+                &:focus {
+                    -moz-box-shadow: none;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    border: 1px solid white;
+                    outline-width: 0;
+                    }
+                    .datepicker {
+                        background-color: #000;
+                        color: black;
+                        border: none;
+                        padding: 10px;
+                    }
+                    thead tr:nth-child(3) th {
+                        color: #fff;
+                        font-weight: bold;
+                        padding-top: 20px;
+                        padding-bottom: 10px;
+                    }
+                }
+                .dow, .old-day, .day, .new-day {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 0px;
+                    &:hover{
+                        border-radius: 6px;
+                        background-color: rgb(18, 114, 178);
+                        color: white;
+                    }
+                }
+                ::placeholder {
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+        .button_top {
+            display: block;
+            box-sizing: border-box;
+            border: 2px solid var(--button_outline_color);
+            border-radius: var(--button_radius);
+            padding: 0.75em 1.5em;
+            background: var(--button_color);
+            color: var(--button_outline_color);
+            transform: translateY(-0.2em);
+            transition: transform 0.1s ease;
+            min-width: 220px;
+        }
+    }
+}

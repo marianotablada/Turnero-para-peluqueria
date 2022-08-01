@@ -8,7 +8,7 @@
 		<meta name="description" content="Somos una tienda virtual que se dedica a la selección y distribución de vinos de origen nacional">
         <link rel="icon" href="">
 		<title>Biyoushi - Peluqueria y salón de belleza</title>
-        <link rel="stylesheet" media="all" href="style.css">
+        <link rel="stylesheet" media="all" href="css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.css">
@@ -35,14 +35,14 @@
 			</button>
 		</div>
 		<div class="main_secondSection" id="main_secondSection">
-			<form id="formulario1" action="" method="" enctype="text/plain"> <!--action="mailto:frver_82@hotmail.com"-->
+			<form id="formulario1" action="" method="" enctype="text/plain" name="contact" netlify>
 				<ul>
 					<li>
-						<input id="inputNombre" type="text" name="nombre" placeholder="Ingrese su nombre" class="nombre" required>
+						<input id="inputNombre" type="text" name="name" placeholder="Ingrese su nombre" class="nombre" required>
 					</li>
 					<br>
 					<li>
-						<input type="tel" id="tel" name="telDeContacto" placeholder="Número de teléfono (sin 0 y sin 15)" class="nombre" required>
+						<input type="tel" id="tel" name="tel" placeholder="Número de teléfono (sin 0 y sin 15)" class="tel" required>
 					</li>
 					<br>
 				<label for="">Seleccione el motivo del turno:</label>
@@ -69,54 +69,50 @@
 				</label>
 			</ul>
 			<button id="botonContinuar" class="bn633-hover" type="submit">
-				<span class="button_top">Continuar
-				</span>
+				<span class="button_top">Continuar</span>
 			</button>
 			</form>
 		</div>
-			<!-- <button id="myBtn" title="Go to back">Volver atrás</button> -->
-			<div class="main_therdSection" id="main_therdSection">
-					<div class="card">
-						<form autocomplete="off" id="formulario_calendario">
-							<div class="card-header bg-dark">
-								<div class="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
-									<input type="text" id="dp1" class="datepicker" placeholder="Elegir fecha" name="date" onchange="handler(event)" readonly><span class="fa fa-calendar"></span>
-								</div>
-							</div>
-						</form>
-						<div class="main_horarios" id="main_horarios">
-							<div class="cell py-1">10:00AM</div>
-							<div class="cell py-1">10:30AM</div>
-							<div class="cell py-1">11:00AM</div>
-							<div class="cell py-1">11:30AM</div>
-							<div class="cell py-1">12:00PM</div>
-							<div class="cell py-1">12:30PM</div>
-							<div class="cell py-1">1:00PM</div>
-							<div class="cell py-1">1:30PM</div>
-							<div class="cell py-1">2:00PM</div>
-							<div class="cell py-1">2:30PM</div>
-							<div class="cell py-1">3:00PM</div>
-							<div class="cell py-1">3:30PM</div>
-							<div class="cell py-1">4:00PM</div>
-							<div class="cell py-1">4:30PM</div>
-							<div class="cell py-1">5:00PM</div>
-							<div class="cell py-1">5:30PM</div>
-							<div class="cell py-1">6:00PM</div>
-							<div class="cell py-1">6:30PM</div>
-							<div class="cell py-1">7:00PM</div>
-						</div>
-						<button id="botonAceptar" class="bn634-hover" type="submit">
-							<span class="button_top">Aceptar
-							</span>
-						</button>
+		<div class="main_therdSection" id="main_therdSection">
+			<div class="card">
+			<form autocomplete="off" id="formulario_calendario">
+				<div class="card-header bg-dark">
+					<div class="mx-0 mb-0 row justify-content-sm-center justify-content-start px-1">
+						<input type="text" id="dp1" class="datepicker" placeholder="Elegir fecha" name="date" onchange="handler(event)" readonly><span class="fa fa-calendar"></span>
 					</div>
 				</div>
+			</form>
+			<div class="main_horarios" id="main_horarios">
+				<div class="cell py-1">10:00AM</div>
+				<div class="cell py-1">10:30AM</div>
+				<div class="cell py-1">11:00AM</div>
+				<div class="cell py-1">11:30AM</div>
+				<div class="cell py-1">12:00PM</div>
+				<div class="cell py-1">12:30PM</div>
+				<div class="cell py-1">1:00PM</div>
+				<div class="cell py-1">1:30PM</div>
+				<div class="cell py-1">2:00PM</div>
+				<div class="cell py-1">2:30PM</div>
+				<div class="cell py-1">3:00PM</div>
+				<div class="cell py-1">3:30PM</div>
+				<div class="cell py-1">4:00PM</div>
+				<div class="cell py-1">4:30PM</div>
+				<div class="cell py-1">5:00PM</div>
+				<div class="cell py-1">5:30PM</div>
+				<div class="cell py-1">6:00PM</div>
+				<div class="cell py-1">6:30PM</div>
+				<div class="cell py-1">7:00PM</div>
 			</div>
-			<div>
+				<button id="botonAceptar" class="bn634-hover" type="submit">
+					<span class="button_top">Aceptar
+					</span>
+				</button>
+			</div>
+		</div>
+		<div>
 			<div id="mensajeFinal">
 				<button id="botonFinalizar" class="bn635-hover">
-					<span class="button_top">Finalizar
-					</span>
+					<span class="button_top">Finalizar</span>
 				</button>
 			</div>
 		</div>
@@ -124,6 +120,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 	<script async src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script src="scriptGSAP.js"></script>
-	<script async src="scriptEnDesarrollo.js"></script>
+	<script async src="script.js"></script>
 </body>
 </html>

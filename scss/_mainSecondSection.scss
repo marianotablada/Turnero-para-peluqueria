@@ -1,0 +1,92 @@
+.main_secondSection {
+    width: 100%;
+    height: auto;
+    display: none;
+    #formulario1 {
+        visibility: hidden;
+        position: relative;
+        background: linear-gradient(195deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        z-index: 60;
+        max-width: 40%;
+        border-radius: 32px;
+        font-size: 1.3rem;
+        height: auto;
+        padding: 1em;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; 
+        bottom: 50px;
+        #select, #select2 {
+            z-index: 110;
+            font-size: 1em;
+            color: black;
+            border: 2px solid #030303;
+            border-radius: 5px;
+            font-family: var(--bs-3-font-family);
+            font-weight: 800;
+        }
+        .bn633-hover {
+            --button_radius: 0.75em;
+            --button_color: #e8e8e8;
+            --button_outline_color: #000000;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 3% 30% 0%;
+            border: none;
+            text-align: center;
+            letter-spacing: 1.5px;
+            min-width: 220px;
+            border-radius: var(--button_radius);
+            background: var(--button_outline_color);
+            visibility: hidden;
+        }
+        .bn633-hover:hover .button_top {
+            transform: translateY(-0.33em);
+        }
+        
+        .bn633-hover:active .button_top {
+            transform: translateY(0);
+        }
+        ul {
+            list-style: none;
+            li {
+                :-ms-input-placeholder {
+                    color: #fff;
+                }
+                
+                ::-ms-input-placeholder {
+                    color: #fff;
+                }
+                .nombre {
+                    border: 2px solid #030303;
+                    height: 40px;
+                    border-radius: 5px;
+                    font-family: var(--bs-3-font-family);
+                    width: 70%;
+                    background-color: black;
+                    color: white;
+                }
+                #tel {
+                    border: 2px solid #030303;
+                    height: 40px;
+                    border-radius: 5px;
+                    font-family: var(--bs-3-font-family);
+                    width: 70%;
+                    background-color: black;
+                    color: white;
+                }
+            }
+            label {
+                font-family: var(--bs-3-font-family);
+                .checkbox {
+                    width: 1.6em;
+                    height: 1.6em;
+                }
+                .valores {
+                    accent-color: #512DA8;
+                }
+            }
+        }
+    }
+}
