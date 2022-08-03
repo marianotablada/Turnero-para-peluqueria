@@ -177,14 +177,14 @@ body {
         border-radius: 5px;
         font-family: var(--bs-3-font-family);
         width: 70%;
-        color: white; }
+        color: #0B0B0B; }
       .main_secondSection #formulario1 ul li #tel {
         border: 2px solid #030303;
         height: 40px;
         border-radius: 5px;
         font-family: var(--bs-3-font-family);
         width: 70%;
-        color: white; }
+        color: #0B0B0B; }
       .main_secondSection #formulario1 ul label {
         font-family: var(--bs-3-font-family); }
         .main_secondSection #formulario1 ul label .checkbox {
@@ -210,7 +210,7 @@ body {
     .main_therdSection .card .bn634-hover {
       --button_radius: 0.75em;
       --button_color: #e8e8e8;
-      --button_outline_color: #000000;
+      --button_outline_color: $color-black;
       font-size: 1.1rem;
       font-weight: bold;
       margin: 3% 35%;
@@ -279,7 +279,7 @@ body {
           background-color: orange;
           opacity: 1; }
       .main_therdSection .card #formulario_calendario .day {
-        color: white; }
+        color: #F0F0F0; }
       .main_therdSection .card #formulario_calendario .fa-calendar {
         color: #fff;
         font-size: 30px;
